@@ -80,7 +80,7 @@ const Login = () => {
         </div>
         <div className="flex flex-col justify-center items-center w-full bg-white p-4 border border-gray-primary rounded">
           <p className="text-sm">
-            Don't have an account?{" "}
+            Do not have an account?{" "}
             <Link to={ROUTES.SIGN_UP} className="font-bold text-blue-medium">
               Sign up
             </Link>
