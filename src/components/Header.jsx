@@ -3,10 +3,14 @@ import { Link } from "react-router-dom";
 import * as ROUTES from "../constants/routes";
 import FirebaseContext from "../context/firebase";
 import UserContext from "../context/user";
+import useUser from "../helpers/use-user";
 
 const Header = () => {
   const { firebase } = useContext(FirebaseContext);
   const { user } = useContext(UserContext);
+  const {
+    user: { username },
+  } = useUser();
 
   return (
     <header className="bg-white h-16 border-b border-gray-primary mb-8">
@@ -65,7 +69,7 @@ const Header = () => {
                 </button>
 
                 <div className="flex items-center cursor-pointer">
-                  <Link to={`/p/${user.username}`}>
+                  <Link to={`/p/${username}`}>
                     <img
                       className="rounded-full h-8 w-8 flex"
                       src={`/images/avatars/${user.displayName}.jpg`}
